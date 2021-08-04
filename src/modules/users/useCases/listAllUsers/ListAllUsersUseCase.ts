@@ -12,7 +12,7 @@ class ListAllUsersUseCase {
     const user = this.usersRepository.findById(user_id);
 
     if (!user) {
-      throw new Error("User not exits!");
+      throw new ReferenceError("User not exits!");
     }
 
     if (user.admin === false) {
